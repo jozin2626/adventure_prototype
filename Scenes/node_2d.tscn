@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://huvu6kxj4gyh"]
+
+[ext_resource type="Script" uid="uid://dphg17caolur6" path="res://Scripts/Player/base_player_controller.gd" id="1_j2wod"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_j2wod")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+region_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+zoom = Vector2(2, 2)
