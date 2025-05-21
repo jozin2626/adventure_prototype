@@ -24,7 +24,7 @@ extends CharacterBody2D
 var is_moving : bool = false
 
 # Process input for movement
-func get_input():
+func get_movement_input():
 	var input = Vector2()
 	if Input.is_action_pressed('right'):
 		input.x += 1
@@ -35,6 +35,10 @@ func get_input():
 	if Input.is_action_pressed('down'):
 		input.y += 1
 	return input
+	
+func get_interactive_input():
+	if Input.is_action_pressed("attack"):
+		pass
 		
 # Process movements
 func process_movements(direction: Vector2) -> void:
@@ -48,6 +52,6 @@ func process_movements(direction: Vector2) -> void:
 # Driver function for player movements
 func _physics_process(delta: float) -> void:
 	# Get movement direction
-	var direction = get_input()
+	var direction = get_movement_input()
 	process_movements(direction)
 	move_and_slide()
